@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Button Temp Conversion</title>
+    <style>
+        #wrapper {
+            width: 85%;
+            margin: auto;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            border-color: #efefef;
+            border-radius: 4px;
+        }
+        h1 { color: #6C6C6C; }
+
+        h2 { color: #5A5A5A; }
+
+        h3 { color: #434343; }
+
+        p {
+            font-size: 1em;
+            line-height: 150%;
+            text-indent: 1em;
+        }
+        article { margin-top: 30px; }
+        .ex { margin-left: 2rem; }
+
+        /* --- style the answer paragraph ---- */
+        #random {
+            background-color: #ccddff;
+            text-indent: 1em;
+            line-height: 200%;
+        }
+        input { margin-top: 10px;
+                font-size: 1rem;
+        }
+        .button {
+            background-color: #efefef;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        #c_to_f {background-color: #e0eefa;}
+        #f_to_c {background-color: #fcf8e3;}
+        code { font-weight: bold; }
+        footer {
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <address>Tae Choe &nbsp;| &nbsp; CS81 &nbsp;| &nbsp; Summer 2016</address>
+    <h2>Unit 8 Assignments</h2>
+    <main>
+    <article>
+    <h3>Ex. 3: Two Button Temperature Conversion</h3>
+        <div class="ex">
+        <label><span>Enter a temperature to convert</span><br>
+            <input type="text" id="temp" size="30"></label><br>
+            <input type="button" id="f_to_c" class="button" value="Convert &deg;F to &deg;C">
+            <input type="button" id="c_to_f" class="button" value="Convert &deg;C to &deg;F">
+
+        <p id="newTemp"></p>
+        <script src="convTemps.js"></script>
+        </div>
+    </article>
+    <!--- claculat tip  ----->
+    <article>
+        <h3>Ex. 5: Calculate Tips</h3>
+        <div class="ex">
+        <label><span>Original cost: </span> <input class="inpNum" type="number" id="cost" required></label><br>
+        <label><span>Tip rate: </span>  <input class="inpNum" type="number" id="tiprate" required> &percnt;</label><br>
+        <input type="button" id="calctip" class="button" onClick="calctips(cost, tiprate)" value="Calculate Tip">
+
+        <p id="tipAmount"></p>
+        <script>
+            function calctips (cost, rate) {
+                var origCost = cost.value;
+                var tipRate = rate.value;
+                var tip = (origCost * (tipRate / 100)).toFixed(2);
+                document.getElementById("tipAmount").innerHTML = tip;
+            }
+        </script>
+        </div>
+    </article>
+    </main>
+
+</div>
+</body>
+</html>
